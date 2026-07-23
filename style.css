@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+}
+
+.game-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.score-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-item .label {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.score-item .value {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 100%);
+    overflow: hidden;
+    border: 3px solid #667eea;
+}
+
+.bird {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #FFD700;
+    border-radius: 50%;
+    left: 100px;
+    top: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: birdWing 0.2s infinite alternate;
+    z-index: 10;
+}
+
+.bird::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    right: 8px;
+    top: 8px;
+}
+
+@keyframes birdWing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+.pipe {
+    position: absolute;
+    background: linear-gradient(90deg, #228B22 0%, #32CD32 100%);
+    border: 2px solid #1a6a1a;
+    border-radius: 10px;
+}
+
+.pipe-top {
+    top: 0;
+}
+
+.pipe-bottom {
+    bottom: 0;
+}
+
+.game-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.game-info.hidden {
+    display: none;
+}
+
+.info-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.info-content h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.info-content p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.btn-restart {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-restart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-restart:active {
+    transform: translateY(0);
+}
+
+.game-over {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.game-over h2 {
+    color: #fff;
+}
+
+.game-over p {
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .game-area {
+        height: 400px;
+    }
+
+    .game-header h1 {
+        font-size: 2em;
+    }
+
+    .score-board {
+        gap: 20px;
+    }
+
+    .bird {
+        width: 35px;
+        height: 35px;
+    }
+}

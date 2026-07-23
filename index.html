@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>Flappy Bird</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">Score:</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">High Score:</span>
+                    <span class="value" id="highScore">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <div class="bird" id="bird"></div>
+            
+            <!-- Pipes will be generated dynamically -->
+        </div>
+
+        <div class="game-info" id="gameInfo">
+            <div class="info-content">
+                <h2 id="gameTitle">Press SPACE to Start</h2>
+                <p id="gameMessage">Navigate the bird through the pipes!</p>
+                <button class="btn-restart" id="restartBtn" onclick="restartGame()">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
